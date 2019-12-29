@@ -22,6 +22,6 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 ct = ColumnTransformer([('encoder', OneHotEncoder(), [0])], remainder='passthrough')
 X = np.array(ct.fit_transform(X), dtype=np.float)
-# EEncoding the Dependent Variable (Y)
+# Encoding the Dependent Variable (Y)
 from sklearn.preprocessing import LabelEncoder
 y = LabelEncoder().fit_transform(y)
