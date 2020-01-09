@@ -219,7 +219,7 @@ def gen_ordered_statistics(transaction_manager, record):
             record.support / transaction_manager.calc_support(items_base))
         lift = confidence / transaction_manager.calc_support(items_add)
         yield OrderedStatistic(
-            frozenset(items_base), frozenset(items_add), confidence, lift)
+            str(frozenset(items_base)), str(frozenset(items_add)), confidence, lift)
 
 
 def filter_ordered_statistics(ordered_statistics, **kwargs):
@@ -296,7 +296,7 @@ def apriori(transactions, **kwargs):
         if not ordered_statistics:
             continue
         yield RelationRecord(
-            support_record.items, support_record.support, ordered_statistics)
+            str(support_record.items), support_record.support, ordered_statistics)
 
 
 ################################################################################
