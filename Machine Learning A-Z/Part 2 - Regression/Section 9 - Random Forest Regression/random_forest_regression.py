@@ -20,15 +20,15 @@ sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 sc_y = StandardScaler()
-y_train = sc_y.fit_transform(y_train)"""
+y_train = sc_y.fit_transform(y_train.reshape(-1,1))"""
 
 # Fitting Random Forest Regression to the dataset
 from sklearn.ensemble import RandomForestRegressor
-regressor = RandomForestRegressor(n_estimators = 300, random_state = 0)
+regressor = RandomForestRegressor(n_estimators = 10, random_state = 0)
 regressor.fit(X, y)
 
 # Predicting a new result
-y_pred = regressor.predict(np.array([[6.5]]))
+y_pred = regressor.predict([[6.5]])
 
 # Visualising the Random Forest Regression results (higher resolution)
 X_grid = np.arange(min(X), max(X), 0.01)
