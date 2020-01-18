@@ -1,3 +1,0 @@
-include upsilon/datasets/images/*
-include upsilon/datasets/lightcurves/*
-include upsilon/datasets/models/*
